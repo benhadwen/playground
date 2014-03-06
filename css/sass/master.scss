@@ -1,0 +1,13 @@
+@import "mixins/mixins";
+
+// replaced these 2 with compass reset
+@import "partials/main";
+@import "partials/normalize";
+
+// grid systems? Maybe Fluid of Sass grid system?
+@import "partials/grid";
+@import "partials/grid_768";
+@import "partials/grid_fluid";
+
+// declare fonts
+@import "partials/fonts";
