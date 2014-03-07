@@ -1,5 +1,14 @@
-.slideshow{
+
+
+.slideshow-wrapper{
 	position: relative;
+	height: 200px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.slideshow{
+	width: 400%;
 	height: 200px;
 }
 
