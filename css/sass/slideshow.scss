@@ -1,0 +1,30 @@
+.slideshow{
+	position: relative;
+	height: 200px;
+}
+
+.slideshow ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+.slideshow li{
+	float:left;
+	width:25%;
+	height: 200px;
+}
+
+.controls a{
+	position: absolute;
+	top: 40%;
+}
+
+.controls .next{
+	right: 0;
+}
+
+.controls .prev{
+	display: block;
+	left: 0;
+}

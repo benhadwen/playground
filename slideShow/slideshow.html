@@ -9,8 +9,8 @@
 	<title>slideshow</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="/hadwensites/playground/css/normalize.min.css">
-	<!-- <link rel="stylesheet" href="/hadwensites/playground/css/layout.css" /> -->
+  	<link rel="stylesheet" href="/hadwensites/playground/css/master.css">
+	<link rel="stylesheet" href="/hadwensites/playground/css/slideshow.css" />
 	<link rel="canonical" href=""/>
 	<script src="/hadwensites/playground/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
@@ -24,15 +24,21 @@
 	</header>  
 </div>
 
-<div class="slideshow">
- <ul>
- 	<li style="background-color:#9AB714">slide 1</li>
- 	<li style="background-color:#CFCF35">slide 2</li>
- 	<li style="background-color:#C06464">slide 3</li>
- 	<li style="background-color:#7F9ADF">slide 4</li>
- </ul>
+<div class="slideshow" id="slideshow01">
+	<ul>
+	 	<li style="background-color:#9AB714">slide 1</li>
+	 	<li style="background-color:#CFCF35">slide 2</li>
+	 	<li style="background-color:#C06464">slide 3</li>
+	 	<li style="background-color:#7F9ADF">slide 4</li>
+	</ul>
+	<div class="controls">
+	 	<a href="#" class="next">next</a>
+	 	<a href="#" class="prev">prev</a>
+	</div>
 </div>
 
+<script src="/hadwensites/playground/js/vendor/jquery-1.11.0.min.js"></script>
+<script src="/hadwensites/playground/js/slideshow.js"></script>
 <script>
  <!-- scripts -->
 </script>
