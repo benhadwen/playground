@@ -18,25 +18,3 @@ header p, header a { color:#666;}
 header a{ text-decoration: none;}
 header a:hover{text-decoration: underline;}
 
-.main-container {
-	margin-top: 82px;
-}
-
-.slant-wrapper{
-	position: relative; 
-	margin:auto;
-	width: 50px;
-	height: 100px;
-	transform:rotate(45deg);
-	-ms-transform:rotate(45deg); /* IE 9 */
-	-webkit-transform:rotate(45deg); /* Opera, Chrome, and Safari */
-
-}
-
-.slant {
-	background-color: #33ccff;
-	width: 13px;
-	height: 71px;
-	float: left;
-	margin-right: 6px;
-}
