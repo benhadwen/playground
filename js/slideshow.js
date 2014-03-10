@@ -33,17 +33,33 @@ $(document).ready(function(){
 	$('a.next').click(function(){
 		var nextSlideNum;
 		console.log("next");
-		console.log("currentSlideNum: " + currentSlideNum);
 		if((currentSlideNum + 1) > numSlides)
 		{
 			console.log("move back to slide 1");
 			nextSlideNum = 1;
+			nextSlide = $('.slideshow>ul>li:nth-child('+ nextSlideNum +')').addClass('active');
 			//do animation here
+			$(nextSlide).css("left", "100%");
+			$(currentSlide).animate({
+				"left": 0,
+				"left": "-100%"},
+				"slow", function() {
+					$(currentSlide).removeClass('active');
+					currentSlide = nextSlide;
+				/* stuff to do after animation is complete */
+			});
+
+			$(nextSlide).animate({
+				"left": "100%",
+				"left": 0},
+				"slow", function() {
+				/* stuff to do after animation is complete */
+			});
+			//end animation
 			currentSlideNum = 1;
 			console.log("currentSlideNum: " + currentSlideNum);
 		}
 		else{
-			console.log("move to next slide");
 			nextSlideNum = currentSlideNum + 1;
 			nextSlide = $('.slideshow>ul>li:nth-child('+ nextSlideNum +')').addClass('active');
 			//do animation here
@@ -52,6 +68,8 @@ $(document).ready(function(){
 				"left": 0,
 				"left": "-100%"},
 				"slow", function() {
+					$(currentSlide).removeClass('active');
+					currentSlide = nextSlide;
 				/* stuff to do after animation is complete */
 			});
 
