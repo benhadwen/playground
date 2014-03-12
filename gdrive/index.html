@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!-- client id for web app: 123632968026-73d2o6ms5oq42u0qlmg7f8nvvmhvu6aj.apps.googleusercontent.com -->
+<!-- API KEY: AIzaSyCxbI6gLkrBSIdHHXdnhECtA38lRgkzARo -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Ben Hadwen Playground</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="/hadwensites/playground/css/master.css">
+  <link rel="stylesheet" href="/hadwensites/playground/css/layout.css" />
+	<link rel="canonical" href=""/>
+	<script src="/hadwensites/playground/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+
+<body>
+<script>
+	var clientId = '123632968026-73d2o6ms5oq42u0qlmg7f8nvvmhvu6aj.apps.googleusercontent.com';
+	var developerKey = 'AIzaSyCxbI6gLkrBSIdHHXdnhECtA38lRgkzARo';
+ // var clientId = '720409271749-hqv3lb4u0q82t68vperem5oi3kosskol.apps.googleusercontent.com';
+  // var developerKey = 'AIzaSyBTEWsJ4aXdoOzB4ey81eX9-ja7HejL4Qc';
+  var accessToken;
+  function onApiLoad() {
+    gapi.load('auth', authenticateWithGoogle);
+    gapi.load('picker');
+  }
+  function authenticateWithGoogle() {
+    window.gapi.auth.authorize({
+      'client_id': clientId,
+      'scope': ['https://www.googleapis.com/auth/drive']
+    }, handleAuthentication);
+  }
+  function handleAuthentication(result) {
+    if(result && !result.error) {
+      accessToken = result.access_token;
+      setupPicker();
+    }
+  }
+  function setupPicker() {
+    var picker = new google.picker.PickerBuilder()
+      .setOAuthToken(accessToken)
+      .setDeveloperKey(developerKey)
+      .addView(new google.picker.DocsUploadView())
+      .addView(new google.picker.DocsView())
+      .build();
+    picker.setVisible(true);
+  }
+</script>
+<script src="https://apis.google.com/js/api.js?onload=onApiLoad"></script>
+
+<div class="header-container">
+	<header>
+		<h1>Ben Hadwen :: Playground</h1>
+	</header>  
+</div>
+<div class="main-container">
+	<div class="slant-wrapper">
+		<div class="slant"></div>
+		<div class="slant"></div>
+	</div>
+
+</div>
+
+<script>
+</script>
+</body>
